@@ -31,11 +31,11 @@
 
 require_once 'inc/HtmlString.php';
 
-$markup = new HtmlString();
-$markup->setString('My strinnnng');
-$bold = $markup->getBoldString();
+//$markup = new HtmlString();
+//$markup->setString('My strinnnng');
+//$bold = $markup->getBoldString();
 
-echo $bold; /* Display <b>My strinnnng</b> */
+//echo $bold; /* Display <b>My strinnnng</b> */
 
 /*
   Part 2 :
@@ -47,4 +47,7 @@ echo $bold; /* Display <b>My strinnnng</b> */
 
 $markup = new HtmlString('My strinnnnng');
 echo $markup->getBoldString();
+echo $markup->getItalicString();
+echo $markup->getItalicBoldString();
+echo $markup->getItalicBoldString();
 
