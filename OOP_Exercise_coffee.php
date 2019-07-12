@@ -58,13 +58,13 @@ class CoffeeCup
 			$this->quantity -= $quantity;
 			echo "Remain " . $this->quantity . "cl of coffee<br>";
 			}
-		
-	
 	}
+	
 	public function refill(){
 		$this->quantity = $this->volume;
 		echo 'Mug full again<br>';
 	}
+
 	public function reHeat(int $plusTemperature){
 		$this->temperature += $plusTemperature;
 		echo $this->temperature;

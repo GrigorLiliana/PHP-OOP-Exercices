@@ -19,9 +19,11 @@
 		> The Elves have -3 in defense. So they start with 2 defenses.
 		Elves can flee any fight by sacrificing 20 life.
 		When an Elf wins a fight, he wins 2 defense and 2 life.
+*/
+	
 
 
-	-- Step 1 :
+/*	-- Step 1 :
 
 	Create a Character class.
 	This class will implement all attributes and methods common to the characters.
@@ -70,13 +72,13 @@
 	It's actually an 'inventory' of equipments.
 	Change the type of $equipment => It's now an array.
 
-	A character may have several equipments but:
-	- It can only be equipped with 4 objects in total.
-	- It can only be equipped with 2 swords at a time.
-	- He can only wear one armor.
+A character may have several equipments but:
+- It can only be equipped with 4 objects in total.
+- It can only be equipped with 2 swords at a time.
+- He can only wear one armor.
 
-	Change your function to 'add'/'remove'/'display' an equipement.
-	Now it will add/remove/display to the inventory.
+Change your function to 'add'/'remove'/'display' an equipement.
+Now it will add/remove/display to the inventory.
 
 
 
