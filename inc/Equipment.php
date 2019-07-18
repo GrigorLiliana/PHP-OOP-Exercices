@@ -1,20 +1,18 @@
 <?php
 class equipment{
 public $type = ['armor', 'sword', 'nif'];
-public $name;
 public $description;
 public $health;
 public $attack;
 public $defence;
 
-public function __construct($type, $name, $description, $health, $attack, $defence){
+public function __construct($type, $description, $health, $attack, $defence){
 		
     if(!in_array($type, $this->type)){
     echo	"destroing invalid object";
     $this->__destruct();
     }else{
     $this->type = $type;
-    $this->name = $name;
     $this->description = $description;
     $this->health = $health;
     $this->attack = $attack; 
@@ -22,4 +20,15 @@ public function __construct($type, $name, $description, $health, $attack, $defen
     }
 }//construct end
 
+public function __toString()
+{
+$string = 'Desc : ' . $this->type . "<br>";
+$string .= 'Type : ' . $this->description . "<br>";
+return $string;
 }
+
+public function getType(){
+    return $this->type;
+}
+
+}//class end

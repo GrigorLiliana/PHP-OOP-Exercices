@@ -8,13 +8,12 @@ define('ELVES', "Elves");
 class Character
 {
 	private $type = [ORC, HUMAN, ELVES];
-	public $name;
 	public $health = 100;
 	public $attack = 10;
 	public $defence = 5;
     public $war_cry = "Attaaaaaaaack!";
     public $inventory = [];
-    public $i = 1;
+    
 
 
 	public function __construct($type){
@@ -42,50 +41,79 @@ class Character
             $this->attack -= 3;
             $this->defence -= 3;
             $this->health -= 10;
-		}
-    }
+        }
+
+    }//end construct
     
     
 
 public function addInventory($equip){
-    $swords = 0;
-    foreach($this->inventory as $key => $value){
-       
-    if(count($this->inventory == 4)){
-        echo "You can't add mor objects";
-    }else if($value->type == "armor"){
-
-    echo "you can't add more armor";
-
-    }else if($value->type =="swords"){
-        $swords++;
-        if($swords==2){
-            echo "you can't add more swords";
+ 
+    
+    if(count($this->inventory) < 4){
+       $sword = 0;
+        foreach($this->inventory as $equip){
+            if($equip->getType() === "sword"){
+             $swords++;
+               
+               if($swords=2){
+                   echo "you can't add more swords";
+               }else{
+                $this->inventory[] = $equip;
+               }
+           }
         }
     }else{
-        $key[$this->i] = $equip;
-        $this->i ++;
-        }
+        echo "<strong style='color:red'>You can't add mor objects</strong>";
+    
+
+    
     }//end of foreach
         
 }//end of function
 
-public function removeInventory($equip){
-$this->equipment = null;
+public function removeInventory(){
+$this->inventory = null;
 }
 public function displayInventory(){
- if($this->equipment){
-     echo $this->equipment;
+ if($this->inventory){
+     echo"<h1> Check my equipment</h1>";
+     var_dump($this->inventory);
  }else{
     echo "Not equipaded";
  }
 }
 
-}//construct end
+}//class end
+
+
 
 // tests
-$sword = new equipment("nif", "Death Sword", "desc", 10, 0, 0);
+//create one equipment */
+
+$equipOne = new equipment("nif", "Death Sword", 10, 0, 0);
+var_dump($equipOne);
+$equipTwo = new equipment("sword", "Test Equipment Two", 5, 1, 2);
+
+$equipThree = new equipment("sword", "Test Equipment Three", 5, 1, 2);
+
+$testFour = new equipment("sword", "Test Equipment Four", 5, 1, 2);
+
+$testFive = new equipment("armor", "Test Equipment Five", 5, 1, 2);
+
+//create one character */
+
 $orc = new Character('Orc');
 
-$orc->addInventory($sword);
+//equip the character
+$orc->addInventory($equipOne);
+$orc->addInventory($equipTwo);
+$orc->addInventory($equipThree);
+$orc->addInventory($testFour);
+$orc->addInventory($testFour);
+$orc->displayInventory();
+echo "<h1> Orc Character</h1>";
 var_dump($orc);
+
+
+

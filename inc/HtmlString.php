@@ -15,14 +15,14 @@ public function __construct($string){
     }
 
     public function getBoldString(){
-        echo '<b>' . $this->string . '</b><br><br>';
+        echo '<b>' . $this->getString() . '</b><br><br>';
     }
     
     public function getItalicString(){
-        echo '<i>' . $this->string . '</i><br><br>';
+        echo '<i>' . $this->getString(). '</i><br><br>';
     }
     
     public function getItalicBoldString(){
-        echo '<b><i>' . $this->string . '</i></b><br><br>';
+        echo '<b>' . $this->getItalicString() . '</b><br><br>';
     }
 }
