@@ -15,6 +15,8 @@ class FlowerManager
             while($getFlowers= mysqli_fetch_assoc($flowersToShow)){
                 $flowers[$i]["name"] = $getFlowers['flower_name'];
                 $flowers[$i]["price"] = $getFlowers["flower_price"]; 
+                $flowers[$i]["link"] = $getFlowers["flower_link"];
+                $flowers[$i]["id"] = $getFlowers["flower_id"];
                 $i++;
             }          
             return $flowers;
