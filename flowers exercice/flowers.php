@@ -8,7 +8,7 @@ use MyProject\Flowers\Db\UserManager as Manager;
 
 if(isset($_POST['login']) && isset($_POST['password'])) {
     $userManager = new Manager();
-    var_dump( $userManager);
+    
     $userLogged = $userManager->login($_POST['login'], $_POST['password']);
     var_dump($userLogged);
     if(!empty($userLogged)) {

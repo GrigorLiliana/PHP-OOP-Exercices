@@ -36,11 +36,35 @@ $showAll = $newAll->findAll();
 <h2 style="padding:1rem;"><?php echo $nameFlower;?></h2>
 <img  width=150 height=150 style="border-radius:50%;" src="<?php echo $linkFlower;?>" alt="<?php echo $nameFlower;?>">
 <strong >Price:</strong> <span><?php echo $priceFlower;?>€</span><br>
-<a href="view-flowers.php?id=<?php echo $idFlower;?>"> Buy a <?php echo $nameFlower;?></a></div>
 
-<?php
+<a href="view-flowers.php?id=<?php echo $idFlower;?>"> 
+Buy a <?php echo $nameFlower;?>
+</a>
 
-}?>
+</div>
+
+<?php } //end for loop 
+
+if(isset($_GET["id"])){
+    $a=0;
+
+    $_SESSION['order'][$a]['quantity'] = "";
+    $_SESSION['order'][$a]['flower'] = "";
+    
+    for($i=0; $i<count( $_SESSION['order']); $i++){
+       
+        $q = 1;
+        if($_SESSION['order'][$a]['flower'] == $_GET["id"]){
+            $q++;
+        }
+        $_SESSION['order'][$a]['quantity'] = $q;
+        $_SESSION['order'][$a]['flower'] = $_GET["id"];
+        $a++;
+    }
+    var_dump($_SESSION['order']);
+
+}
+?>
 </div>
 </body>
 </html>
