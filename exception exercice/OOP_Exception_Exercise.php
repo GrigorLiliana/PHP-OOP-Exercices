@@ -36,7 +36,6 @@
 	https://www.php.net/manual/fr/function.readline.php
 
 	- Part 1
-
 		A program asks the user for a file name.
 		For now, the program does nothing else.
 
